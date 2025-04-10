@@ -1,0 +1,4 @@
+python manage.py runserver 127.0.0.1:8001
+uvicorn main:app --reload
+celery -A django_app worker -l info -P eventlet
+docker run --name my-redis -p 6379:6379 -d redis
